@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <!-- The script is downloaded in parallel with the HTML parsing.
+        But it waits to execute until the HTML is fully parsed.
+        Scripts with defer are executed in order, if multiple scripts use defer. 
+    -->
+    <!-- Feature	        defer	                    async
+        Download	        In parallel	                In parallel
+        Execution	        After HTML is fully parsed	As soon as downloaded
+        Order of scripts	Preserved	                Not preserved
+        Safe for DOM?	    ✅ Yes (after DOM is ready)❌ Risky (may run before DOM)
+    -->
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div id="id"></div>
+  </body>
+</html>
